@@ -57,29 +57,11 @@ yarn build
 
 ## 🔧 Personalização
 
-Para personalizar o template de acordo com suas necessidades:
+Para personalizar o template de acordo com suas necessidades!
 
-1. Substitua o vídeo VSL em `/public/videos/` pelo seu próprio vídeo
+1. Substitua o vídeo VSL pelo seu próprio vídeo
 2. Edite os textos e chamadas para ação nos componentes React em `/src/components/`
 3. Ajuste as cores e estilos no arquivo de configuração do TailwindCSS (`tailwind.config.js`)
-
-## 📚 Estrutura do Projeto
-
-```
-├── public/            # Arquivos estáticos
-│   ├── videos/        # Vídeos VSL
-│   └── images/        # Imagens
-├── src/
-│   ├── components/    # Componentes React
-│   ├── pages/         # Páginas da aplicação
-│   ├── styles/        # Estilos globais
-│   └── utils/         # Funções utilitárias
-└── tailwind.config.js # Configuração do TailwindCSS
-```
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ## 📞 Contato
 
