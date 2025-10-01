@@ -47,13 +47,13 @@ export const FAQ = ({ faq }: FAQProps) => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-3xl font-bold text-center mb-12"
+          className="text-3xl font-bold text-center mb-12 text-white"
         >
           Perguntas Frequentes
         </motion.h2>
@@ -69,10 +69,10 @@ export const FAQ = ({ faq }: FAQProps) => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="mb-4 border-b border-gray-200 last:border-0"
+              className="mb-4 border-b border-gray-700 last:border-0"
             >
               <button
-                className="flex justify-between items-center w-full py-4 text-left hover:text-green-600 transition-colors"
+                className="flex justify-between items-center w-full py-4 text-left text-white hover:text-green-400 transition-colors"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
                 <span className="font-semibold">{item.question}</span>
@@ -96,7 +96,7 @@ export const FAQ = ({ faq }: FAQProps) => {
                     exit="hidden"
                     className="overflow-hidden"
                   >
-                    <div className="pb-4 text-gray-600">{item.answer}</div>
+                    <div className="pb-4 text-gray-300">{item.answer}</div>
                   </motion.div>
                 )}
               </AnimatePresence>

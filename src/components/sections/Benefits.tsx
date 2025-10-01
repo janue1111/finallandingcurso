@@ -13,7 +13,7 @@ export const Benefits = ({ benefits }: BenefitsProps) => {
   });
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -28,13 +28,13 @@ export const Benefits = ({ benefits }: BenefitsProps) => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="text-center p-6 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors"
+              className="text-center p-6 rounded-lg bg-gray-900 hover:bg-gray-800 transition-colors"
             >
-              <div className="text-gray-800 mb-4 flex justify-center">
+              <div className="text-white mb-4 flex justify-center">
                 {benefit.icon}
               </div>
-              <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
-              <p className="text-gray-600">{benefit.description}</p>
+              <h3 className="text-xl font-bold mb-3 text-white">{benefit.title}</h3>
+              <p className="text-gray-300">{benefit.description}</p>
             </motion.div>
           ))}
         </motion.div>

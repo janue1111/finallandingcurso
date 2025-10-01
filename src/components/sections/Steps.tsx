@@ -13,9 +13,9 @@ export const Steps = ({ steps }: StepsProps) => {
   });
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-black">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Como funciona</h2>
+        <h2 className="text-3xl font-bold text-center mb-12 text-white">Como funciona</h2>
         
         <motion.div
           ref={ref}
@@ -30,8 +30,8 @@ export const Steps = ({ steps }: StepsProps) => {
                 {index + 1}
               </div>
               <div className="ml-6">
-                <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+                <h3 className="text-xl font-bold mb-2 text-white">{step.title}</h3>
+                <p className="text-gray-300">{step.description}</p>
               </div>
             </div>
           ))}

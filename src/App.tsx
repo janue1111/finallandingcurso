@@ -8,6 +8,8 @@ import { Author } from './components/sections/Author';
 import { Offer } from './components/sections/Offer';
 import { FAQ } from './components/sections/FAQ';
 import { Footer } from './components/sections/Footer';
+import NotificationBanner from './components/NotificationBanner';
+import BottomBanner from './components/BottomBanner';
 import type { LandingPageProps } from './types/landing-page';
 
 // exemplo do conteudo da pagina (altere conforme o uso)
@@ -103,7 +105,8 @@ const landingPageData: LandingPageProps = {
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black">
+      <NotificationBanner />
       <Hero
         mainTitle={landingPageData.mainTitle}
         subTitle={landingPageData.subTitle}
@@ -122,6 +125,7 @@ function App() {
       />
       <FAQ faq={landingPageData.faq} />
       <Footer socialLinks={landingPageData.socialLinks} />
+      <BottomBanner />
     </div>
   );
 }

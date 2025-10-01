@@ -13,7 +13,7 @@ export const Author = ({ author }: AuthorProps) => {
   });
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -30,8 +30,8 @@ export const Author = ({ author }: AuthorProps) => {
             />
           </div>
           <div className="md:w-2/3 md:pl-12">
-            <h2 className="text-3xl font-bold mb-4">{author.name}</h2>
-            <p className="text-gray-600 leading-relaxed">{author.bio}</p>
+            <h2 className="text-3xl font-bold mb-4 text-white">{author.name}</h2>
+            <p className="text-gray-300 leading-relaxed">{author.bio}</p>
           </div>
         </motion.div>
       </div>

@@ -1,0 +1,42 @@
+.notification-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffff00;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.notification-text {
+  font-size: 15px;
+  font-family: 'Fira Sans', sans-serif;
+  line-height: 1.1em;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.text-black {
+  color: #000000;
+}
+
+.text-red {
+  color: #ff0000;
+}
+
+@media (max-width: 768px) {
+  .notification-text {
+    white-space: normal;
+    font-size: 1rem;
+    text-align: center;
+  }
+  .notification-banner {
+    padding: 10px;
+  }
+}

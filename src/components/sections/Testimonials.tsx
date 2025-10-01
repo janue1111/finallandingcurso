@@ -37,13 +37,13 @@ export const Testimonials = ({ testimonials, partnerLogos }: TestimonialsProps) 
   };
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-3xl font-bold text-center mb-12"
+          className="text-3xl font-bold text-center mb-12 text-white"
         >
           O que nossos clientes dizem
         </motion.h2>
@@ -59,7 +59,7 @@ export const Testimonials = ({ testimonials, partnerLogos }: TestimonialsProps) 
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300"
+              className="bg-gray-900 p-6 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300"
             >
               <div className="flex items-center mb-4">
                 <motion.img
@@ -71,11 +71,11 @@ export const Testimonials = ({ testimonials, partnerLogos }: TestimonialsProps) 
                   className="w-12 h-12 rounded-full mr-4"
                 />
                 <div>
-                  <h4 className="font-bold">{testimonial.name}</h4>
-                  <p className="text-gray-600 text-sm">{testimonial.role}</p>
+                  <h4 className="font-bold text-white">{testimonial.name}</h4>
+                  <p className="text-gray-300 text-sm">{testimonial.role}</p>
                 </div>
               </div>
-              <p className="text-gray-700">{testimonial.content}</p>
+              <p className="text-gray-300">{testimonial.content}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -87,7 +87,7 @@ export const Testimonials = ({ testimonials, partnerLogos }: TestimonialsProps) 
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-16"
           >
-            <h3 className="text-center text-gray-600 mb-8">Empresas que confiam em nós</h3>
+            <h3 className="text-center text-gray-300 mb-8">Empresas que confiam em nós</h3>
             <div className="flex flex-wrap justify-center items-center gap-8">
               {partnerLogos.map((logo, index) => (
                 <motion.img
