@@ -1,4 +1,4 @@
-// import React from 'react';
+import { useRef } from 'react';
 import { Heart, Zap, Target } from 'lucide-react';
 import { Hero } from './components/sections/Hero';
 import { Benefits } from './components/sections/Benefits';
@@ -11,10 +11,13 @@ import { Footer } from './components/sections/Footer';
 import NotificationBanner from './components/NotificationBanner';
 import BottomBanner from './components/BottomBanner';
 import type { LandingPageProps } from './types/landing-page';
+import { useStickyBanner } from './hooks/useStickyBanner';
 
 // exemplo do conteudo da pagina (altere conforme o uso)
 const landingPageData: LandingPageProps = {
-  mainTitle: "Transforme sua vida com nosso método comprovado",
+  mainTitle: <>
+    Transforme <span style={{ color: '#FFFF00' }}>sua vida</span> com nosso <span style={{ color: '#FF0000' }}>método</span> comprovado
+  </>,
   subTitle: "Descubra como milhares de pessoas estão alcançando resultados extraordinários",
   videoUrl: "https://www.youtube.com/embed/your-video-id",
   ctaText: "Quero começar agora!",
@@ -104,6 +107,9 @@ const landingPageData: LandingPageProps = {
 };
 
 function App() {
+  const faqRef = useRef<HTMLDivElement>(null);
+  const isBannerFixed = useStickyBanner(faqRef);
+
   return (
     <div className="min-h-screen bg-black">
       <NotificationBanner />
@@ -123,9 +129,11 @@ function App() {
         bonuses={landingPageData.bonuses}
         ctaText={landingPageData.ctaText}
       />
-      <FAQ faq={landingPageData.faq} />
+      <div ref={faqRef}>
+        <FAQ faq={landingPageData.faq} />
+      </div>
+      <BottomBanner isFixed={isBannerFixed} />
       <Footer socialLinks={landingPageData.socialLinks} />
-      <BottomBanner />
     </div>
   );
 }

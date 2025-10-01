@@ -30,7 +30,7 @@ export interface FAQItem {
 }
 
 export interface LandingPageProps {
-  mainTitle: string;
+  mainTitle: ReactNode;
   subTitle: string;
   videoUrl: string;
   ctaText: string;

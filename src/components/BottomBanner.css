@@ -1,15 +1,25 @@
+/* Base styles for the banner */
 .bottom-banner {
-  position: fixed;
-  bottom: 0;
-  left: 0;
   width: 100%;
   background-color: #FF0000;
-  z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px 0;
+  padding: 25px 0;
   animation: pulso-brillo-suave 1.5s infinite;
+}
+
+/* State when the banner is fixed to the bottom of the viewport */
+.bottom-banner--fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* State when the banner is static at the end of the content flow */
+.bottom-banner--static {
+  position: relative; /* Or 'static', relative is often safer */
 }
 
 .action-button {

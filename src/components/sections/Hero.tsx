@@ -1,14 +1,14 @@
+import { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Users } from 'lucide-react';
 
 interface HeroProps {
-  mainTitle: string;
+  mainTitle: ReactNode;
   subTitle: string;
   videoUrl: string;
   ctaText: string;
 }
-
 export const Hero = ({ mainTitle, subTitle, videoUrl, ctaText }: HeroProps) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
