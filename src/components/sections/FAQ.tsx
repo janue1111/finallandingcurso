@@ -55,7 +55,7 @@ export const FAQ = ({ faq }: FAQProps) => {
           transition={{ duration: 0.6 }}
           className="text-3xl font-bold text-center mb-12 text-white"
         >
-          Perguntas Frequentes
+          Preguntas Frecuentes
         </motion.h2>
 
         <motion.div

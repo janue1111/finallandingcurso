@@ -22,13 +22,7 @@ export const Author = ({ author }: AuthorProps) => {
           transition={{ duration: 0.6 }}
           className="flex flex-col md:flex-row items-center max-w-4xl mx-auto"
         >
-          <div className="md:w-1/3 mb-8 md:mb-0">
-            <img
-              src={author.imageUrl}
-              alt={author.name}
-              className="rounded-lg shadow-lg"
-            />
-          </div>
+
           <div className="md:w-2/3 md:pl-12">
             <h2 className="text-3xl font-bold mb-4 text-white">{author.name}</h2>
             <p className="text-gray-300 leading-relaxed">{author.bio}</p>

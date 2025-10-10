@@ -11,7 +11,7 @@ const BottomBanner: React.FC<BottomBannerProps> = ({ isFixed }) => {
   return (
     <div className={bannerClasses}>
       <a href="URL_DE_DESTINO" className="action-button">
-'''        CLICK AQUÍ PARA COMENZAR A VENDER NUESTROS PRODUCTOS <br /> DIGITALES Y GENERAR INGRESOS INMEDIATAMENTE...
+'''        CLICK AQUI PARA DESCUBRIR EL MÉTODO JAPONÉS Y DESTRUIR MI PROCRASTINACIÓN YA
 '''      </a>
     </div>
   );

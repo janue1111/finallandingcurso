@@ -15,6 +15,9 @@ export const Benefits = ({ benefits }: BenefitsProps) => {
   return (
     <section className="py-20 bg-black">
       <div className="container mx-auto px-4">
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 text-white">
+          Imagina una Vida Donde Tienes el Control Absoluto de tu Mente y tu Tiempo
+        </h2>
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
@@ -34,7 +37,7 @@ export const Benefits = ({ benefits }: BenefitsProps) => {
                 {benefit.icon}
               </div>
               <h3 className="text-xl font-bold mb-3 text-white">{benefit.title}</h3>
-              <p className="text-gray-300">{benefit.description}</p>
+              <p className="text-gray-300" dangerouslySetInnerHTML={{ __html: benefit.description }}></p>
             </motion.div>
           ))}
         </motion.div>

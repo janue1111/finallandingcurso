@@ -37,17 +37,11 @@ export const Testimonials = ({ testimonials, partnerLogos }: TestimonialsProps) 
   };
 
   return (
-    <section className="py-20 bg-black">
+    <section className="py-20 bg-black text-white">
       <div className="container mx-auto px-4">
-        <motion.h2 
-          initial={{ opacity: 0, y: -20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-3xl font-bold text-center mb-12 text-white"
-        >
-          O que nossos clientes dizem
-        </motion.h2>
-        
+        <h2 className="text-3xl md:text-5xl font-bold text-center mb-12">
+          Lo que Dicen los Primeros Estudiantes
+        </h2>
         <motion.div
           ref={ref}
           variants={containerVariants}

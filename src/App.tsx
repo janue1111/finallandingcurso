@@ -1,12 +1,15 @@
 import { useRef } from 'react';
 import { Heart, Zap, Target } from 'lucide-react';
 import { Hero } from './components/sections/Hero';
+import { FrustrationCycle } from './components/sections/FrustrationCycle';
+import { ProductivityTricks } from './components/sections/ProductivityTricks';
 import { Benefits } from './components/sections/Benefits';
 import { Testimonials } from './components/sections/Testimonials';
 import { Steps } from './components/sections/Steps';
 import { Author } from './components/sections/Author';
 import { Offer } from './components/sections/Offer';
 import { FAQ } from './components/sections/FAQ';
+import { Guarantee } from './components/sections/Guarantee';
 import { Footer } from './components/sections/Footer';
 import NotificationBanner from './components/NotificationBanner';
 import BottomBanner from './components/BottomBanner';
@@ -16,87 +19,68 @@ import { useStickyBanner } from './hooks/useStickyBanner';
 // exemplo do conteudo da pagina (altere conforme o uso)
 const landingPageData: LandingPageProps = {
   mainTitle: <>
-    Transforme <span style={{ color: '#FFFF00' }}>sua vida</span> com nosso <span style={{ color: '#FF0000' }}>método</span> comprovado
+    Para el Estudiante que Sabe que <span style={{ color: '#FFFF00' }}>Puede Más</span>, Pero la <span style={{ color: '#FF0000' }}>Procrastinación lo Detiene</span>.
   </>,
-  subTitle: "Descubra como milhares de pessoas estão alcançando resultados extraordinários",
+  subTitle: "Descubre el Método Japonés de 7 Días que te Permite Destruir la Procrastinación y Alcanzar Notas de Élite, Incluso si Sientes que Nada te ha Funcionado Antes.",
   videoUrl: "https://www.youtube.com/embed/your-video-id",
   ctaText: "Quero começar agora!",
   benefits: [
     {
-      icon: <Heart className="w-12 h-12" />,
-      title: "Resultados Garantidos",
-      description: "Método testado e aprovado por milhares de alunos"
-    },
-    {
       icon: <Zap className="w-12 h-12" />,
-      title: "Rápido e Eficiente",
-      description: "Veja resultados em apenas 30 dias de prática"
+      title: "Concentración Inquebrantable",
+      description: "Olvídate de las distracciones. Siéntate a estudiar y entra en un <span style={{ color: '#FFFF00' }}>estado de flujo</span> donde absorbes información compleja <span style={{ color: '#FFFF00' }}>sin esfuerzo</span> y el tiempo simplemente vuela."
     },
     {
       icon: <Target className="w-12 h-12" />,
-      title: "Suporte Completo",
-      description: "Acompanhamento personalizado durante toda sua jornada"
+      title: "Resultados de Élite",
+      description: "No solo apruebes, <span style={{ color: '#FFFF00' }}>domina tus exámenes</span>. Entiende y retiene la información a un nivel que te posicionará en el <span style={{ color: '#FFFF00' }}>top de tu clase</span>, abriéndote puertas que nunca imaginaste."
+    },
+    {
+      icon: <Heart className="w-12 h-12" />,
+      title: "Libertad y Tiempo Libre sin Culpa",
+      description: "Termina tus obligaciones en la <span style={{ color: '#FFFF00' }}>mitad del tiempo</span>. Disfruta de tus tardes y fines de semana sabiendo que ya hiciste el trabajo, sintiéndote <span style={{ color: '#FFFF00' }}>orgulloso y en paz</span> contigo mismo."
     }
   ],
   testimonials: [
     {
-      name: "Testemunha 1",
-      role: "Empresária",
-      content: "Incrível como o método mudou completamente minha vida em apenas algumas semanas!",
+      name: "Sofía R.",
+      role: "Estudiante de Ingeniería",
+      content: "Siempre pensé que era mala para las matemáticas. Después de aplicar el método, no solo dejé de procrastinar, ¡sino que mi última nota fue un 9.5! Increíble cómo cambió mi mentalidad en solo una semana.",
       imageUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330"
     },
     {
-      name: "Testemunha 2",
-      role: "Profissional Liberal",
-      content: "Nunca imaginei que poderia alcançar tantos resultados em tão pouco tempo.",
+      name: "Javier M.",
+      role: "Estudiante de Derecho",
+      content: "Pasaba noches enteras sin dormir por el estrés. Ahora termino de estudiar a las 6 p.m. y tengo tiempo libre. Este curso vale 100 veces su precio. Me devolvió la vida.",
       imageUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e"
     },
     {
-      name: "Testemunha 3",
-      role: "Estudante",
-      content: "O melhor investimento que já fiz em minha educação. Recomendo!",
+      name: "Ana G.",
+      role: "Estudiante de Medicina",
+      content: "Antes me sentía abrumada por la cantidad de material. Con este método, organizo mi estudio de forma eficiente y disfruto del proceso. ¡Mis resultados han mejorado muchísimo!",
       imageUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb"
     }
   ],
-  steps: [
-    {
-      title: "Faça sua inscrição",
-      description: "Processo simples e rápido, comece em menos de 5 minutos"
-    },
-    {
-      title: "Acesse o conteúdo",
-      description: "Material completo disponível imediatamente após a compra"
-    },
-    {
-      title: "Aplique o método",
-      description: "Siga o passo a passo e veja os resultados acontecerem"
-    }
-  ],
+
   author: {
-    name: "Titulo em destaque",
-    bio: "Descrição sobre a imagem / produto com detalhes ou inteção de venda.",
+    name: "EL METODO JAPONES SHUCHU",
+    bio: "no volveras a reconocerte y son solo 7 dias.......",
     imageUrl: "https://ideogram.ai/assets/progressive-image/balanced/response/qkuumgGeS9m2lPFnVc-Mag"
   },
-  price: 1997,
-  discountPrice: 997,
-  bonuses: [
-    "Bônus 1",
-    "Bônus 2",
-    "Bônus 3",
-    "Bônus 4"
-  ],
+  price: 47,
+  discountPrice: 6,
   faq: [
     {
-      question: "Quanto tempo tenho acesso ao conteúdo?",
-      answer: "Acesso vitalício a todo o conteúdo e atualizações futuras."
+      question: "¿Tendré acceso para siempre?",
+      answer: "Sí, tu pago es único y tendrás acceso ilimitado a todos los videos y materiales para siempre, incluyendo futuras actualizaciones."
     },
     {
-      question: "Existe garantia de resultados?",
-      answer: "Oferecemos 7 dias de garantia incondicional. Se não ficar satisfeito, devolvemos 100% do seu investimento."
+      question: "¿Necesito mucho tiempo para ver los resultados?",
+      answer: "El método está diseñado para darte victorias rápidas. Verás un cambio en tu capacidad para concentrarte desde el primer día. En 7 días, habrás integrado el sistema completo."
     },
     {
-      question: "Como funciona o suporte?",
-      answer: "Você terá acesso ao nosso time de suporte 24/7 através do grupo VIP no WhatsApp."
+      question: "¿Esto sirve si estudio [carrera difícil como medicina, ingeniería, etc.]?",
+      answer: "Absolutamente. El método no se basa en el tema que estudias, sino en cómo funciona tu cerebro. De hecho, es especialmente poderoso para carreras que demandan una alta carga de estudio y retención."
     }
   ],
   socialLinks: {
@@ -119,16 +103,18 @@ function App() {
         videoUrl={landingPageData.videoUrl}
         ctaText={landingPageData.ctaText}
       />
+      <FrustrationCycle />
+      <ProductivityTricks />
       <Benefits benefits={landingPageData.benefits} />
+      <Steps imageUrl={landingPageData.author.imageUrl} />
       <Testimonials testimonials={landingPageData.testimonials} />
-      <Steps steps={landingPageData.steps} />
-      <Author author={landingPageData.author} />
+
       <Offer
         price={landingPageData.price}
         discountPrice={landingPageData.discountPrice}
-        bonuses={landingPageData.bonuses}
         ctaText={landingPageData.ctaText}
       />
+      <Guarantee />
       <div ref={faqRef}>
         <FAQ faq={landingPageData.faq} />
       </div>

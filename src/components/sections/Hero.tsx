@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Users } from 'lucide-react';
+import '../BottomBanner.css';
 
 interface HeroProps {
   mainTitle: ReactNode;
@@ -37,13 +38,11 @@ export const Hero = ({ mainTitle, subTitle, videoUrl, ctaText }: HeroProps) => {
             />
           </div>
 
-          <button className="bg-green-500 hover:bg-green-400 text-white font-bold py-4 px-8 rounded-full text-xl transition-all transform hover:scale-105">
-            {ctaText}
-          </button>
 
-          <div className="mt-8 flex items-center justify-center text-gray-200">
-            <Users className="w-6 h-6 mr-2" />
-            <span>Mais de 10.000 clientes satisfeitos</span>
+
+          <div className="mt-8 text-gray-200 text-center">
+            <p>Acceso instantáneo por un único pago de <span style={{ color: '#FF0000' }}>$6 USD</span></p>
+            <p className="mt-2">👤 Únete a la comunidad de estudiantes que han decidido tomar el control.</p>
           </div>
         </motion.div>
       </div>
