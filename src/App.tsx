@@ -65,7 +65,7 @@ const landingPageData: LandingPageProps = {
   author: {
     name: "EL METODO JAPONES SHUCHU",
     bio: "no volveras a reconocerte y son solo 7 dias.......",
-    imageUrl: "https://ideogram.ai/assets/progressive-image/balanced/response/qkuumgGeS9m2lPFnVc-Mag"
+    imageUrl: "https://i.imgur.com/bjmpPR3.png"
   },
   price: 47,
   discountPrice: 6,
