@@ -8,6 +8,12 @@
 - **Uso**: Esta es la URL que se usará en los anuncios
 - **Estado**: ✅ Configurada (placeholder listo para construcción)
 
+### **`/mvf1` - Minimal Via Funnel**
+- **URL**: `http://localhost:3000/mvf1`
+- **Propósito**: Nuevo funnel minimalista
+- **Uso**: Funnel alternativo en construcción
+- **Estado**: ✅ Página en blanco lista para desarrollo
+
 ### **`/vsl` - Landing VSL**
 - **URL**: `http://localhost:3000/vsl`
 - **Propósito**: Landing original (método japonés de estudio)

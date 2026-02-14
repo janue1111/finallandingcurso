@@ -22,6 +22,15 @@ export const pushToDataLayer = (event: string, data: any = {}) => {
     }
 };
 
+export const trackPageView = (pagePath: string, pageTitle: string) => {
+    pushToDataLayer('virtual_page_view', {
+        page_path: pagePath,
+        page_title: pageTitle,
+        newUrl: window.location.href,
+        oldUrl: document.referrer || '',
+    });
+};
+
 // Eventos del Quiz
 export const trackQuizStart = () => {
     pushToDataLayer('quiz_started', {
@@ -60,21 +69,26 @@ export const trackOptInView = (segment: string) => {
     });
 };
 
-export const trackOptInSubmit = (userName: string, userEmail: string, answers: any) => {
+export const trackOptInSubmit = (userName: string, userEmail: string, answers: any = {}) => {
     pushToDataLayer('optin_submitted', {
         funnel_step: 'optin_complete',
         user_name: userName,
         user_email: userEmail,
-        segment: answers.concern,
-        // Datos completos del quiz para enriquecer el lead
-        quiz_data: {
-            age_range: answers.age,
-            situation: answers.situation,
-            time_concerned: answers.timeConcerned,
-            main_concern: answers.concern,
-            skin_type: answers.skinType,
-            time_available: answers.timeAvailable,
-        },
+        landing_name: answers.landing_name,
+        oldUrl: answers.oldUrl,
+        newUrl: answers.newUrl,
+        segment: answers.concern || 'general',
+        // Datos completos del quiz si existen
+        ...(Object.keys(answers).length > 0 && {
+            quiz_data: {
+                age_range: answers.age,
+                situation: answers.situation,
+                time_concerned: answers.timeConcerned,
+                main_concern: answers.concern,
+                skin_type: answers.skinType,
+                time_available: answers.timeAvailable,
+            }
+        }),
     });
 };
 
@@ -131,6 +145,54 @@ export const trackAddPaymentInfo = (productName: string, price: number, landingN
         },
         items: [{
             item_id: landingName,
+            item_name: productName,
+            price: price,
+            quantity: 1,
+        }],
+    });
+};
+
+export const trackBeginCheckout = (productName: string, price: number, landingName: string) => {
+    // Recuperar datos del usuario desde localStorage
+    let userData = { name: '', email: '' };
+    try {
+        const stored = localStorage.getItem('userData');
+        if (stored) {
+            userData = JSON.parse(stored);
+        }
+    } catch (e) {
+        console.warn('No se pudo recuperar userData:', e);
+    }
+
+    pushToDataLayer('begin_checkout', {
+        currency: 'USD',
+        value: price,
+        landing_name: landingName,
+        user_data: {
+            email: userData.email || undefined,
+            name: userData.name || undefined,
+        },
+        items: [{
+            item_id: landingName,
+            item_name: productName,
+            price: price,
+            quantity: 1,
+        }],
+    });
+};
+
+export const trackPurchase = (formData: any, productName: string, price: number) => {
+    pushToDataLayer('purchase', {
+        currency: 'USD',
+        value: price,
+        transaction_id: 'TXN_' + Math.floor(Math.random() * 1000000), // Simulación de ID
+        user_data: {
+            email: formData.email,
+            phone_number: formData.countryCode + formData.phoneNumber,
+            name: formData.fullName,
+        },
+        items: [{
+            item_id: 'eyes_princess_system',
             item_name: productName,
             price: price,
             quantity: 1,
